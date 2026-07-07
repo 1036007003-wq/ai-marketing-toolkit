@@ -1,118 +1,190 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI营销自动化工具包 - ¥99 - 今日特价</title>
+  <title>AI Marketing Toolkit — 6 MCP Servers to Automate Your Growth</title>
+  <meta name="description" content="6 open-source MCP servers for Reddit, Twitter, Discord, GitHub, LinkedIn, TikTok marketing. Free tools + Premium features via GitHub Sponsors.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-    .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-    h1 { color: #667eea; font-size: 2rem; margin-bottom: 10px; }
-    .subtitle { color: #666; margin-bottom: 30px; font-size: 1.1rem; }
-    .price { font-size: 3rem; color: #e74c3c; font-weight: 700; margin: 20px 0; }
-    .price s { font-size: 1.5rem; color: #999; margin-right: 10px; }
-    .features { margin: 30px 0; }
-    .feature { padding: 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #667eea; }
-    .feature h3 { color: #333; margin-bottom: 5px; }
-    .feature p { color: #666; font-size: 0.9rem; }
-    .cta { background: #667eea; color: #fff; padding: 20px; border-radius: 10px; text-align: center; margin: 30px 0; font-size: 1.2rem; font-weight: 600; }
-    .payment { text-align: center; margin: 30px 0; padding: 30px; background: #f8f9fa; border-radius: 10px; }
-    .payment h2 { margin-bottom: 20px; color: #333; }
-    .qr-placeholder { width: 200px; height: 200px; background: #ddd; margin: 0 auto 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #999; }
-    .contact { text-align: center; margin: 30px 0; padding: 20px; background: #667eea; color: #fff; border-radius: 10px; }
-    .contact h2 { margin-bottom: 15px; }
-    .contact p { font-size: 1.1rem; margin: 10px 0; }
-    .guarantee { text-align: center; margin: 20px 0; color: #27ae60; font-weight: 600; }
-    .timer { background: #e74c3c; color: #fff; padding: 15px; border-radius: 10px; text-align: center; margin: 20px 0; font-size: 1.1rem; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0e27; color: #fff; line-height: 1.6; }
+    
+    .hero { 
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      padding: 20px; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    }
+    .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; max-width: 800px; }
+    .hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; max-width: 600px; }
+    
+    .cta-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .cta-btn { 
+      background: #fff; color: #667eea; padding: 15px 40px; border-radius: 50px; 
+      font-size: 1.1rem; font-weight: 600; text-decoration: none; 
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cta-btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .cta-btn.secondary { background: transparent; color: #fff; border: 2px solid #fff; }
+    
+    .features { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+    .features h2 { text-align: center; font-size: 2.5rem; margin-bottom: 60px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .feature-card { 
+      background: #1a1f3a; padding: 30px; border-radius: 15px; border: 1px solid #2a2f4a;
+      transition: transform 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+    .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+    .feature-card p { color: #a0a0a0; font-size: 0.95rem; }
+    .feature-card .tags { margin-top: 15px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { 
+      background: #667eea22; color: #667eea; padding: 4px 12px; 
+      border-radius: 20px; font-size: 0.8rem; border: 1px solid #667eea44;
+    }
+    
+    .pricing { padding: 80px 20px; background: #1a1f3a; }
+    .pricing h2 { text-align: center; font-size: 2.5rem; margin-bottom: 60px; }
+    .pricing-grid { 
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 25px; max-width: 900px; margin: 0 auto; 
+    }
+    .price-card { 
+      background: #0a0e27; padding: 35px; border-radius: 15px; text-align: center; 
+      border: 2px solid #2a2f4a; 
+    }
+    .price-card.featured { border-color: #667eea; transform: scale(1.05); }
+    .price-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
+    .price-card .price { font-size: 2.5rem; font-weight: 800; margin-bottom: 25px; }
+    .price-card .price span { font-size: 0.9rem; opacity: 0.7; }
+    .price-card ul { list-style: none; margin-bottom: 25px; text-align: left; }
+    .price-card ul li { padding: 8px 0; color: #a0a0a0; font-size: 0.95rem; border-bottom: 1px solid #1a1f3a; }
+    .price-card ul li:last-child { border-bottom: none; }
+    .price-btn { 
+      background: #667eea; color: #fff; padding: 12px 30px; border-radius: 50px; 
+      text-decoration: none; display: inline-block; font-weight: 600; transition: background 0.3s;
+    }
+    .price-btn:hover { background: #5568d3; }
+    
+    .cta-section { 
+      padding: 80px 20px; text-align: center; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    }
+    .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .cta-section p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+    
+    .footer { padding: 40px; text-align: center; color: #a0a0a0; font-size: 0.9rem; }
+    .footer a { color: #667eea; text-decoration: none; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 AI营销自动化工具包</h1>
-    <p class="subtitle">6合1 MCP服务器 - 让AI自动帮你做营销</p>
-    
-    <div class="timer">
-      ⏰ 今日特价 - 限时24小时 - 过后恢复¥199
+  <div class="hero">
+    <h1>Automate Your Marketing Across 6 Platforms with AI</h1>
+    <p>Open-source MCP servers for Reddit, Twitter/X, Discord, GitHub, LinkedIn & TikTok. Give your AI assistant real marketing superpowers.</p>
+    <div class="cta-group">
+      <a href="https://github.com/1036007003-wq/ai-marketing-toolkit" class="cta-btn">View on GitHub</a>
+      <a href="#pricing" class="cta-btn secondary">Get Premium</a>
     </div>
-    
-    <div class="price">
-      <s>¥199</s> ¥99
-    </div>
-    
-    <div class="features">
-      <div class="feature">
-        <h3>🔴 Reddit营销</h3>
-        <p>自动研究版块、找热门帖子、分析竞品、生成高质量帖子</p>
+  </div>
+
+  <div class="features">
+    <h2>6 MCP Servers Included</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🔴</div>
+        <h3>Reddit Marketing</h3>
+        <p>Research subreddits, find trending posts, analyze competitors, AI-generated posts.</p>
+        <div class="tags"><span class="tag">Free</span><span class="tag">AI Powered</span></div>
       </div>
-      <div class="feature">
-        <h3>🐦 Twitter营销</h3>
-        <p>自动搜索推文、分析互动数据、生成人性化回复</p>
+      <div class="feature-card">
+        <div class="icon">🐦</div>
+        <h3>Twitter/X Marketing</h3>
+        <p>Search tweets, analyze accounts, AI tweet generation, optimal scheduling.</p>
+        <div class="tags"><span class="tag">Free</span><span class="tag">Nitter Support</span></div>
       </div>
-      <div class="feature">
-        <h3>💬 Discord社区</h3>
-        <p>自动找相关服务器、生成社区消息、分析互动数据</p>
+      <div class="feature-card">
+        <div class="icon">💬</div>
+        <h3>Discord Community</h3>
+        <p>Find servers, analyze engagement, draft messages, auto-moderation tools.</p>
+        <div class="tags"><span class="tag">Free</span><span class="tag">AI Drafting</span></div>
       </div>
-      <div class="feature">
-        <h3>🐙 GitHub涨星</h3>
-        <p>自动分析star增长、优化README转化率、找相似项目</p>
+      <div class="feature-card">
+        <div class="icon">🐙</div>
+        <h3>GitHub Growth</h3>
+        <p>Analyze stars, compare repos, AI-optimize READMEs, find similar projects.</p>
+        <div class="tags"><span class="tag">Free</span><span class="tag">AI README</span></div>
       </div>
-      <div class="feature">
-        <h3>💼 LinkedIn营销</h3>
-        <p>自动搜索目标人脉、生成连接请求、分析公司背景</p>
+      <div class="feature-card">
+        <div class="icon">💼</div>
+        <h3>LinkedIn B2B</h3>
+        <p>Search profiles, analyze companies, draft connection requests, optimize posts.</p>
+        <div class="tags"><span class="tag">Free</span><span class="tag">AI Outreach</span></div>
       </div>
-      <div class="feature">
-        <h3>🎵 TikTok病毒</h3>
-        <p>自动搜索热门视频、分析爆款标签、生成脚本</p>
+      <div class="feature-card">
+        <div class="icon">🎵</div>
+        <h3>TikTok Viral</h3>
+        <p>Search trending videos, analyze hashtags, draft scripts, optimize posting.</p>
+        <div class="tags"><span class="tag">Free</span><span class="tag">AI Scripts</span></div>
       </div>
     </div>
-    
-    <div class="cta">
-      ⚡ 适合人群：程序员 | 独立开发者 | 创业者 | 自由职业者
-    </div>
-    
-    <div class="payment">
-      <h2>💰 支付方式</h2>
-      <div class="qr-placeholder">
-        微信收款码<br>（待上传）
+  </div>
+
+  <div class="pricing" id="pricing">
+    <h2>Simple Pricing</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Free</h3>
+        <div class="price">$0<span>/month</span></div>
+        <ul>
+          <li>All 6 MCP servers</li>
+          <li>Public API features</li>
+          <li>Basic analytics</li>
+          <li>Community support</li>
+          <li>No credit card</li>
+        </ul>
+        <a href="https://github.com/1036007003-wq/ai-marketing-toolkit" class="price-btn">Get Free</a>
       </div>
-      <p style="color: #666; margin-top: 10px;">扫码支付后，加微信发送付款截图</p>
-      <p style="color: #667eea; font-weight: 600; margin-top: 10px;">微信：___________（填你的微信号）</p>
+      <div class="price-card featured">
+        <h3>Sponsor</h3>
+        <div class="price">$5<span>/month</span></div>
+        <ul>
+          <li>All free features</li>
+          <li>AI post generation</li>
+          <li>AI README optimization</li>
+          <li>Scheduling tools</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://github.com/sponsors/1036007003-wq" class="price-btn">Become a Sponsor</a>
+      </div>
+      <div class="price-card">
+        <h3>One-Time</h3>
+        <div class="price">$25<span>/lifetime</span></div>
+        <ul>
+          <li>All premium features</li>
+          <li>Lifetime access</li>
+          <li>All future updates</li>
+          <li>Priority support</li>
+          <li>No recurring fees</li>
+        </ul>
+        <a href="https://github.com/sponsors/1036007003-wq" class="price-btn">Get Lifetime</a>
+      </div>
     </div>
-    
-    <div class="contact">
-      <h2>📞 联系我</h2>
-      <p>微信：___________（填你的微信号）</p>
-      <p>QQ：___________（填你的QQ号）</p>
-      <p>闲鱼：___________（填你的闲鱼链接）</p>
-    </div>
-    
-    <div class="guarantee">
-      ✅ 30天免费更新 | ✅ 远程安装协助 | ✅ 技术支持群
-    </div>
-    
-    <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 10px; border-left: 4px solid #ffc107;">
-      <h3 style="color: #856404; margin-bottom: 10px;">📦 包含内容</h3>
-      <ul style="color: #856404; line-height: 2;">
-        <li>✅ 6个MCP服务器完整源代码</li>
-        <li>✅ 中文安装教程（图文+视频）</li>
-        <li>✅ 使用文档（中文）</li>
-        <li>✅ 免费更新6个月</li>
-        <li>✅ 技术支持群（微信/QQ）</li>
-        <li>✅ 不会安装？远程协助</li>
-      </ul>
-    </div>
-    
-    <div style="margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 10px;">
-      <h3 style="color: #155724; margin-bottom: 10px;">💡 为什么选我们？</h3>
-      <p style="color: #155724; line-height: 1.8;">
-        ✅ 代码开源在GitHub（可查可信）<br>
-        ✅ 已测试可用（真实调用API）<br>
-        ✅ 中文文档+视频教程<br>
-        ✅ 技术支持群（实时答疑）<br>
-        ✅ 免费更新（6个月）
-      </p>
-    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Ready to Automate Your Marketing?</h2>
+    <p>6 MCP servers. One toolkit. Unlimited growth potential.</p>
+    <a href="https://github.com/1036007003-wq/ai-marketing-toolkit" class="cta-btn">Start Now on GitHub</a>
+  </div>
+
+  <div class="footer">
+    <p>Open-source under MIT License | <a href="https://github.com/1036007003-wq">@1036007003-wq</a></p>
+    <p style="margin-top: 8px; font-size: 0.8rem;">Built with DeepSeek AI | All MCP servers compatible with Claude, Cline, and any MCP client</p>
   </div>
 </body>
 </html>

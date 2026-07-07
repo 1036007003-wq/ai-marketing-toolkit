@@ -1,28 +1,27 @@
-# 🚀 AI Marketing Toolkit — 4 MCP Servers to Automate Your Growth
+# 🚀 AI Marketing Toolkit — 6 MCP Servers to Automate Your Growth
 
-**The only toolkit you need to automate marketing on Reddit, Twitter, Discord, and GitHub. Free, open-source, and premium features powered by AI.**
+**The only toolkit you need to automate marketing on Reddit, Twitter/X, Discord, GitHub, LinkedIn, and TikTok. Free, open-source, with premium features powered by AI.**
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-💖-pink.svg)](https://github.com/sponsors/1036007003-wq)
-[![GitHub stars](https://img.shields.io/github/stars/1036007003-wq/ai-marketing-toolkit.svg?style=social)](https://github.com/1036007003-wq/ai-marketing-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-🌐-blue.svg)](https://1fd0a6a1db694709ab39ccdd7db7c5f6.app.codebuddy.work)
 
 ---
 
 ## 🎯 What is this?
 
-A bundle of **5 MCP (Model Context Protocol) servers** that let AI agents (Claude, Cline, etc.) automate your marketing across:
+A bundle of **6 MCP (Model Context Protocol) servers** that give AI agents (Claude, Cline, etc.) real marketing superpowers:
 
-| Platform | MCP Server | What it does | Free? |
-|----------|-------------|---------------|-------|
-| 🔥 **Reddit** | [reddit-marketing-mcp](https://github.com/1036007003-wq/reddit-marketing-mcp) | Research subreddits, find trending posts, analyze competitors | ✅ FREE |
-| 🐦 **Twitter/X** | [twitter-marketing-mcp](https://github.com/1036007003-wq/twitter-marketing-mcp) | Search tweets, analyze engagement, draft replies | ✅ FREE |
-| 💬 **Discord** | [discord-ai-mcp](https://github.com/1036007003-wq/discord-ai-mcp) | Find servers, draft community messages, analyze engagement | ✅ FREE |
-| 🐙 **GitHub** | [github-stars-mcp](https://github.com/1036007003-wq/github-stars-mcp) | Analyze star growth, optimize README, find similar repos | ✅ FREE |
-| 💼 **LinkedIn** | [linkedin-marketing-mcp](https://github.com/1036007003-wq/linkedin-marketing-mcp) | Search profiles, draft connection requests, analyze companies | ✅ FREE |
+| Platform | MCP Server | Key Features | Status |
+|----------|-------------|--------------|--------|
+| 🔴 **Reddit** | [reddit-marketing-mcp](https://github.com/1036007003-wq/reddit-marketing-mcp) | Research subreddits, trending posts, competitor analysis | ✅ FREE |
+| 🐦 **Twitter/X** | [twitter-marketing-mcp](https://github.com/1036007003-wq/twitter-marketing-mcp) | Search tweets, analyze accounts, trending topics | ✅ FREE |
+| 💬 **Discord** | [discord-ai-mcp](https://github.com/1036007003-wq/discord-ai-mcp) | Find servers, engagement analysis, message drafting | ✅ FREE |
+| 🐙 **GitHub** | [github-stars-mcp](https://github.com/1036007003-wq/github-stars-mcp) | Star growth, README optimization, repo comparison | ✅ FREE |
+| 💼 **LinkedIn** | [linkedin-marketing-mcp](https://github.com/1036007003-wq/linkedin-marketing-mcp) | Profile search, company analysis, connection requests | ✅ FREE |
+| 🎵 **TikTok** | [tiktok-marketing-mcp](https://github.com/1036007003-wq/tiktok-marketing-mcp) | Trending videos, hashtag analysis, script drafting | ✅ FREE |
 
-**All 4 tools work immediately without API keys for basic features.**
-
-**Premium features** (AI-powered drafts, auto-moderation, etc.) require a [DeepSeek API key](https://platform.deepseek.com) ($0.14/1M tokens, very cheap).
+**All 6 tools work immediately — no API keys needed for free features.**
 
 ---
 
@@ -30,93 +29,113 @@ A bundle of **5 MCP (Model Context Protocol) servers** that let AI agents (Claud
 
 ### Step 1: Install any MCP client
 - **Claude Desktop**: https://claude.ai/download
-- **Cline (VS Code extension)**: Search "Cline" in VS Code marketplace
-- **OpenClaw**: https://openclaw.ai
+- **Cline (VS Code)**: Search "Cline" in VS Code marketplace
+- **WorkBuddy**: Built-in MCP support
 
-### Step 2: Add these 4 servers to your MCP client
+### Step 2: Add servers to your MCP config
 
 ```json
 {
   "mcpServers": {
     "reddit-marketing": {
-      "command": "node",
-      "args": ["/path/to/reddit-marketing-mcp/index.js"]
+      "command": "npx",
+      "args": ["@1036007003-wq/reddit-marketing-mcp"]
     },
     "twitter-marketing": {
-      "command": "node",
-      "args": ["/path/to/twitter-marketing-mcp/index.js"]
+      "command": "npx",
+      "args": ["@1036007003-wq/twitter-marketing-mcp"]
     },
     "discord-ai": {
-      "command": "node",
-      "args": ["/path/to/discord-ai-mcp/index.js"]
+      "command": "npx",
+      "args": ["@1036007003-wq/discord-ai-mcp"]
     },
     "github-stars": {
-      "command": "node",
-      "args": ["/path/to/github-stars-mcp/index.js"]
+      "command": "npx",
+      "args": ["@1036007003-wq/github-stars-mcp"]
+    },
+    "linkedin-marketing": {
+      "command": "npx",
+      "args": ["@1036007003-wq/linkedin-marketing-mcp"]
+    },
+    "tiktok-marketing": {
+      "command": "npx",
+      "args": ["@1036007003-wq/tiktok-marketing-mcp"]
     }
   }
 }
 ```
 
-### Step 3: Start using them!
-Ask your AI agent:
-- "Research r/SaaS for my product launch"
+### Step 3: Ask your AI agent
+- "Research r/SideProject for my product launch"
 - "Find trending tweets about AI marketing"
-- "Draft a Reddit post for my project"
 - "Analyze my GitHub repo's star growth"
+- "Draft a TikTok script about AI tools"
 
 ---
 
-## 💎 Premium Features (Sponsors-only)
+## 💎 Premium Features (GitHub Sponsors)
 
-**Sponsor on GitHub** to unlock:
-- ✨ **AI-powered post generation** (DeepSeek-powered)
-- 📊 **Advanced analytics** (competitor tracking, sentiment analysis)
-- 🤖 **Auto-moderation templates** (Discord)
-- 🎯 **Channel recommendation AI** (find the best places to post)
+[**Sponsor on GitHub**](https://github.com/sponsors/1036007003-wq) to unlock:
+
+| Feature | Free | Premium |
+|---------|------|---------|
+| Reddit research & trending | ✅ | ✅ + AI post gen |
+| Twitter search & analysis | ✅ | ✅ + AI tweet gen |
+| Discord server search | ✅ | ✅ + AI moderation |
+| GitHub star analysis | ✅ | ✅ + AI README opt |
+| LinkedIn profile search | ✅ | ✅ + AI outreach |
+| TikTok trending search | ✅ | ✅ + AI scripts |
+| **Price** | **$0** | **$5/mo** |
 
 **Sponsorship tiers:**
 - 💖 **$5/month** — All premium features
-- 💖 **$25/month** — All premium + custom AI prompts
-- 💖 **$99 one-time** — Lifetime access
+- 💖 **$25/month** — All premium + priority support
+- 💖 **$99 one-time** — Lifetime access, all future updates
 
-👉 **Sponsor here:** https://github.com/sponsors/1036007003-wq
-
----
-
-## 📖 Detailed Docs
-
-Each tool has its own repo with full documentation:
-
-1. **Reddit Marketing MCP** → https://github.com/1036007003-wq/reddit-marketing-mcp
-2. **Twitter Marketing MCP** → https://github.com/1036007003-wq/twitter-marketing-mcp
-3. **Discord AI MCP** → https://github.com/1036007003-wq/discord-ai-mcp
-4. **GitHub Stars MCP** → https://github.com/1036007003-wq/github-stars-mcp
+👉 **[Sponsor here](https://github.com/sponsors/1036007003-wq)**
 
 ---
 
-## 🏆 Why This Beats Hiring a Marketer
+## 🌐 Live Demo
 
-| Hiring a marketer | Using this toolkit |
-|-------------------|-------------------|
-| $3000/month salary | **$0** (free features) |
-| Takes weeks to learn your product | AI learns in seconds |
+Check out the landing page: [AI Marketing Toolkit](https://1fd0a6a1db694709ab39ccdd7db7c5f6.app.codebuddy.work)
+
+---
+
+## 📖 Individual Repos
+
+Each tool has its own repository with full documentation:
+
+1. [Reddit Marketing MCP](https://github.com/1036007003-wq/reddit-marketing-mcp) — Subreddit research, competitor analysis, AI posts
+2. [Twitter Marketing MCP](https://github.com/1036007003-wq/twitter-marketing-mcp) — Tweet search, account analysis, AI tweets
+3. [Discord AI MCP](https://github.com/1036007003-wq/discord-ai-mcp) — Server finder, engagement analysis, message drafts
+4. [GitHub Stars MCP](https://github.com/1036007003-wq/github-stars-mcp) — Star growth, README optimization, repo comparison
+5. [LinkedIn Marketing MCP](https://github.com/1036007003-wq/linkedin-marketing-mcp) — Profile search, company analysis, AI outreach
+6. [TikTok Marketing MCP](https://github.com/1036007003-wq/tiktok-marketing-mcp) — Trending videos, hashtag strategy, AI scripts
+
+---
+
+## 🏆 Why This vs. Hiring a Marketer
+
+| Hiring a marketer | AI Marketing Toolkit |
+|-------------------|---------------------|
+| $3000+/month | **$0** (free tier) |
+| Weeks to learn your product | AI learns in seconds |
 | Human bias & fatigue | 24/7 consistent |
 | Hard to scale | Infinite scale |
+| One platform expertise | **6 platforms at once** |
 
 ---
 
-## 🌍 For China Users (中国用户)
+## 🌍 China Users (中国用户)
 
 ```bash
-# If you can't access APIs directly, set proxy:
-export HTTP_PROXY=http://127.0.0.1:7890
-export HTTPS_PROXY=http://127.0.0.1:7890
-
-# Or use a VPN
+# Set proxy in .env
+HTTP_PROXY=http://127.0.0.1:7890
+HTTPS_PROXY=http://127.0.0.1:7890
 ```
 
-All tools support proxy settings via `.env` file.
+All tools support proxy via `.env` file.
 
 ---
 
@@ -126,48 +145,22 @@ All tools support proxy settings via `.env` file.
 - [x] Twitter Marketing MCP (FREE + Premium)
 - [x] Discord AI MCP (FREE + Premium)
 - [x] GitHub Stars MCP (FREE + Premium)
-- [ ] **v2.0**: Unified dashboard (web UI)
+- [x] LinkedIn Marketing MCP (FREE + Premium)
+- [x] TikTok Marketing MCP (FREE + Premium)
+- [ ] **v2.0**: Unified web dashboard
 - [ ] **v2.0**: Auto-scheduling across all platforms
 - [ ] **v2.0**: AI-powered A/B testing for posts
 
-**Sponsor to prioritize features you want!**
-
----
-
-## 💰 Pricing
-
-| Feature | Free | Premium ($5/mo) |
-|---------|------|-------------------|
-| Reddit research | ✅ | ✅ + AI post gen |
-| Twitter search | ✅ | ✅ + AI reply gen |
-| Discord server search | ✅ | ✅ + AI channel rec |
-| GitHub star analysis | ✅ | ✅ + AI README opt |
-| **Total value** | **$0** | **$5/mo** (1 coffee) |
-
-**Compare:** Hiring a marketer = $3000/mo. This = $5/mo.
-
----
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=1036007003-wq/reddit-marketing-mcp,1036007003-wq/twitter-marketing-mcp,1036007003-wq/discord-ai-mcp,1036007003-wq/github-stars-mcp&type=Date)](https://star-history.com/#1036007003-wq/reddit-marketing-mcp&Date)
-
----
-
-## 🐛 Issues / Feature Requests
-
-Open an issue in any of the 4 repos above.
+**Sponsor to vote on what features come next!**
 
 ---
 
 ## 💖 Sponsor
 
-This project is free and open-source. If it saves you time/money, please sponsor!
+This project is free and open-source. If it saves you time or money, please consider [sponsoring](https://github.com/sponsors/1036007003-wq).
 
-👉 **Sponsor on GitHub:** https://github.com/sponsors/1036007003-wq
-
-Every dollar goes back into development 🚀
+Every dollar goes back into building more tools for the community 🚀
 
 ---
 
-**Built by [@1036007003-wq](https://github.com/1036007003-wq) | ⭐ Star this repo if you find it useful!**
+**Built by [@1036007003-wq](https://github.com/1036007003-wq) | ⭐ Star this repo if it's useful! | [Live Demo](https://1fd0a6a1db694709ab39ccdd7db7c5f6.app.codebuddy.work)**
