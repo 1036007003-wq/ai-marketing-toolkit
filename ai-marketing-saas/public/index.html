@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Marketing SaaS - Automate Your Marketing Across 6 Platforms</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0e27; color: #fff; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 20px; }
+    .hero p { font-size: 1.5rem; margin-bottom: 40px; opacity: 0.9; }
+    .cta-btn { background: #fff; color: #667eea; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: 600; text-decoration: none; display: inline-block; transition: transform 0.3s; }
+    .cta-btn:hover { transform: scale(1.05); }
+    .features { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+    .features h2 { text-align: center; font-size: 3rem; margin-bottom: 60px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .feature-card { background: #1a1f3a; padding: 30px; border-radius: 15px; border: 1px solid #2a2f4a; }
+    .feature-card .icon { font-size: 3rem; margin-bottom: 20px; }
+    .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+    .feature-card p { color: #a0a0a0; line-height: 1.6; }
+    .pricing { padding: 80px 20px; background: #1a1f3a; }
+    .pricing h2 { text-align: center; font-size: 3rem; margin-bottom: 60px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+    .price-card { background: #0a0e27; padding: 40px; border-radius: 15px; text-align: center; border: 2px solid #2a2f4a; }
+    .price-card.featured { border-color: #667eea; transform: scale(1.05); }
+    .price-card h3 { font-size: 1.8rem; margin-bottom: 20px; }
+    .price-card .price { font-size: 3rem; font-weight: 800; margin-bottom: 30px; }
+    .price-card .price span { font-size: 1rem; opacity: 0.7; }
+    .price-card ul { list-style: none; margin-bottom: 30px; }
+    .price-card ul li { padding: 10px 0; border-bottom: 1px solid #2a2f4a; }
+    .price-btn { background: #667eea; color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; display: inline-block; font-weight: 600; }
+    .footer { padding: 40px; text-align: center; color: #a0a0a0; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>🚀 AI Marketing SaaS</h1>
+    <p>Automate your marketing across Reddit, Twitter, Discord, GitHub, LinkedIn, TikTok</p>
+    <a href="#pricing" class="cta-btn">Start Free Trial</a>
+  </div>
+
+  <div class="features">
+    <h2>✨ Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🔴</div>
+        <h3>Reddit Marketing</h3>
+        <p>Research subreddits, find trending posts, analyze competitors, draft viral posts with AI</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🐦</div>
+        <h3>Twitter Marketing</h3>
+        <p>Search tweets, analyze engagement, draft replies, schedule posts for optimal times</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💬</div>
+        <h3>Discord Community</h3>
+        <p>Find relevant servers, draft community messages, analyze engagement, grow your community</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🐙</div>
+        <h3>GitHub Growth</h3>
+        <p>Analyze star growth, optimize README for conversions, find similar repos, get more stars</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💼</div>
+        <h3>LinkedIn B2B</h3>
+        <p>Search profiles, draft connection requests, analyze companies, grow your network</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎵</div>
+        <h3>TikTok Viral</h3>
+        <p>Search trending videos, analyze hashtags, draft scripts, go viral on TikTok</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing" id="pricing">
+    <h2>💰 Pricing</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Free</h3>
+        <div class="price">$0<span>/month</span></div>
+        <ul>
+          <li>✅ 3 posts/month</li>
+          <li>✅ Basic analytics</li>
+          <li>✅ Community support</li>
+          <li>❌ AI generation</li>
+          <li>❌ Priority support</li>
+        </ul>
+        <a href="#" class="price-btn" onclick="startCheckout('free')">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <h3>Pro</h3>
+        <div class="price">$10<span>/month</span></div>
+        <ul>
+          <li>✅ 100 posts/month</li>
+          <li>✅ AI generation</li>
+          <li>✅ Advanced analytics</li>
+          <li>✅ Priority support</li>
+          <li>✅ All 6 platforms</li>
+        </ul>
+        <a href="#" class="price-btn" onclick="startCheckout('pro')">Start Free Trial</a>
+      </div>
+      <div class="price-card">
+        <h3>Agency</h3>
+        <div class="price">$50<span>/month</span></div>
+        <ul>
+          <li>✅ Unlimited posts</li>
+          <li>✅ All platforms</li>
+          <li>✅ Team members</li>
+          <li>✅ Custom AI training</li>
+          <li>✅ White-label reports</li>
+        </ul>
+        <a href="#" class="price-btn" onclick="startCheckout('agency')">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 AI Marketing SaaS | <a href="https://github.com/1036007003-wq/ai-marketing-toolkit" style="color: #667eea;">GitHub</a></p>
+    <p style="margin-top: 10px; font-size: 0.9rem;">Open-source MCP servers included for free</p>
+  </div>
+
+  <script>
+    function startCheckout(plan) {
+      alert(`Demo mode: ${plan} plan selected!\n\nIn production, this would redirect to Stripe checkout.\n\nTo go live:\n1. Add STRIPE_SECRET_KEY to .env\n2. Run: npm run setup-stripe\n3. Deploy to production`);
+    }
+  </script>
+</body>
+</html>

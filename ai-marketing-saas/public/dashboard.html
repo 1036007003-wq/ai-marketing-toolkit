@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - AI Marketing SaaS</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0e27; color: #fff; }
+    .sidebar { width: 250px; height: 100vh; background: #1a1f3a; position: fixed; left: 0; top: 0; padding: 20px; }
+    .sidebar h2 { margin-bottom: 30px; color: #667eea; }
+    .sidebar nav a { display: block; padding: 12px; color: #a0a0a0; text-decoration: none; border-radius: 8px; margin-bottom: 5px; }
+    .sidebar nav a:hover { background: #2a2f4a; color: #fff; }
+    .main { margin-left: 250px; padding: 30px; }
+    .header { margin-bottom: 30px; }
+    .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .stat-card { background: #1a1f3a; padding: 20px; border-radius: 12px; border: 1px solid #2a2f4a; }
+    .stat-card h3 { color: #a0a0a0; font-size: 0.9rem; margin-bottom: 10px; }
+    .stat-card .value { font-size: 2rem; font-weight: 700; }
+    .tool-section { background: #1a1f3a; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+    .tool-section h2 { margin-bottom: 20px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; color: #a0a0a0; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; background: #0a0e27; border: 1px solid #2a2f4a; border-radius: 8px; color: #fff; font-size: 1rem; }
+    .form-group textarea { min-height: 150px; }
+    .btn { background: #667eea; color: #fff; padding: 12px 30px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .btn:hover { background: #5568d3; }
+    .result { background: #0a0e27; padding: 20px; border-radius: 8px; margin-top: 20px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🚀 AI Marketing</h2>
+    <nav>
+      <a href="#dashboard">📊 Dashboard</a>
+      <a href="#reddit">🔴 Reddit</a>
+      <a href="#twitter">🐦 Twitter</a>
+      <a href="#discord">💬 Discord</a>
+      <a href="#github">🐙 GitHub</a>
+      <a href="#linkedin">💼 LinkedIn</a>
+      <a href="#tiktok">🎵 TikTok</a>
+      <a href="#billing">💰 Billing</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Dashboard</h1>
+      <p>Welcome back! Here's your marketing overview.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Posts This Month</h3>
+        <div class="value">12</div>
+      </div>
+      <div class="stat-card">
+        <h3>Total Engagement</h3>
+        <div class="value">1.2K</div>
+      </div>
+      <div class="stat-card">
+        <h3>Active Platforms</h3>
+        <div class="value">6</div>
+      </div>
+      <div class="stat-card">
+        <h3>Subscription</h3>
+        <div class="value" style="font-size: 1.2rem; color: #667eea;">Pro Plan</div>
+      </div>
+    </div>
+
+    <div class="tool-section" id="reddit">
+      <h2>🔴 Reddit - Research Subreddit</h2>
+      <div class="form-group">
+        <label>Subreddit Name</label>
+        <input type="text" id="subreddit" placeholder="e.g., SideProject" />
+      </div>
+      <button class="btn" onclick="researchReddit()">Research</button>
+      <div class="result" id="reddit-result" style="display: none;"></div>
+    </div>
+
+    <div class="tool-section" id="generate">
+      <h2>✍️ AI Post Generator</h2>
+      <div class="form-group">
+        <label>Platform</label>
+        <select id="platform">
+          <option value="Reddit">Reddit</option>
+          <option value="Twitter">Twitter</option>
+          <option value="Discord">Discord</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="TikTok">TikTok</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Topic</label>
+        <input type="text" id="topic" placeholder="What do you want to post about?" />
+      </div>
+      <div class="form-group">
+        <label>Tone</label>
+        <select id="tone">
+          <option value="casual">Casual</option>
+          <option value="professional">Professional</option>
+          <option value="humorous">Humorous</option>
+          <option value="controversial">Controversial</option>
+        </select>
+      </div>
+      <button class="btn" onclick="generatePost()">Generate Post</button>
+      <div class="result" id="generate-result" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script>
+    async function researchReddit() {
+      const subreddit = document.getElementById('subreddit').value;
+      if (!subreddit) return alert('Please enter a subreddit name');
+      
+      const resultDiv = document.getElementById('reddit-result');
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = 'Loading...';
+      
+      const res = await fetch('/api/research-reddit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ subreddit })
+      });
+      
+      const data = await res.json();
+      resultDiv.textContent = JSON.stringify(data.data, null, 2);
+    }
+
+    async function generatePost() {
+      const platform = document.getElementById('platform').value;
+      const topic = document.getElementById('topic').value;
+      const tone = document.getElementById('tone').value;
+      
+      if (!topic) return alert('Please enter a topic');
+      
+      const resultDiv = document.getElementById('generate-result');
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = 'Generating...';
+      
+      const res = await fetch('/api/generate-post', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ platform, topic, tone })
+      });
+      
+      const data = await res.json();
+      resultDiv.textContent = data.data.post;
+    }
+  </script>
+</body>
+</html>
